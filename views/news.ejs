@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <style>
+            body{
+                margin: 0 auto;
+                padding: 30px 0;
+                width: 900px;
+            }
+
+            a{
+                text-decoration: none;
+            }
+            h3{
+                color: blue;
+                font-weight: normal;
+                font-size: 17px;
+            }
+            .flexbox{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                width: 380px;
+                font-size: 18px;
+            }
+            .flexbox a{
+                margin-bottom: 10px;
+            }
+            p{
+                font-size: 18px;
+                width: 800px;
+            }
+        </style>
+    </head>
+<body>
+    <% blogs.forEach(blog =>{ %>
+       <h3>НАУКА И ТЕХНИКА</h3>
+       <a href=<%= blog.url %>><h2><%= blog.title %></h2></a>
+        <p><%= blog.description %></p> 
+    <% }) %>
+   
+    <h2>Вместе с &laquoпривет&raquo часто ищут</h2>
+    <div class="flexbox"> 
+        <% phrases.forEach(phrase =>{ %>
+        <a href="#"><%= phrase %></a>
+     <% }) %>
+    </div>
+</body>
+</html>
